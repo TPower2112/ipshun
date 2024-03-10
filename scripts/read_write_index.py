@@ -1,20 +1,27 @@
-# Import the csv module
 import csv
+from datetime import datetime, timedelta
 
-# Open the text file and the CSV file
-text_file = open('tinesip.txt', 'r')
-csv_file = open('index/index.csv', 'w', newline='')
+# Function to write data to CSV
+def write_to_csv(file_path, ip_addresses):
+    # Calculate today's date and expiry date
+    today = datetime.now()
+    expiry_date = today + timedelta(days=30)
 
-# Create a csv.writer object
-writer = csv.writer(csv_file)
+    # Open the CSV file in write mode
+    with open(file_path, 'w', newline='') as csvfile:
+        # Create a CSV writer object
+        csvwriter = csv.writer(csvfile)
 
-# Read the text file line by line and write to the CSV file
-for line in text_file:
-    # Split the line by whitespace to get the fields
-    fields = line.split()
-    # Write the fields as a row to the CSV file
-    writer.writerow(fields)
+        # Write the header
+        csvwriter.writerow(['IP Address', 'Today\'s Date', 'Expiry Date'])
 
-# Close the files
-text_file.close()
-csv_file.close()
+        # Write the data rows
+        for ip in ip_addresses:
+            csvwriter.writerow([ip, today.strftime('%Y-%m-%d'), expiry_date.strftime('%Y-%m-%d')])
+
+# Read IP addresses from a text file
+with open('tinesip.txt', 'r') as file:
+    ip_addresses = file.read().splitlines()
+
+# Write the data to a CSV file
+write_to_csv('index/index.csv', ip_addresses)
