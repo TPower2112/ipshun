@@ -2,7 +2,7 @@
 import csv
 
 # Open the text file and the CSV file
-text_file = open('text_file.txt', 'r')
+text_file = open('tines/ipshun.txt', 'r')
 csv_file = open('csv_file.csv', 'w', newline='')
 
 # Create a csv.writer object
