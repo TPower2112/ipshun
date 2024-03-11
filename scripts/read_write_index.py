@@ -1,27 +1,28 @@
 import csv
 from datetime import datetime, timedelta
 
-# Function to write data to CSV
-def write_to_csv(file_path, ip_addresses):
+# Function to append data to CSV
+def append_to_csv(input_file_path, csv_file_path):
     # Calculate today's date and expiry date
     today = datetime.now()
     expiry_date = today + timedelta(days=30)
 
-    # Open the CSV file in write mode
-    with open(file_path, 'w', newline='') as csvfile:
+    # Read IP addresses from the input text file
+    with open(input_file_path, 'r') as file:
+        ip_addresses = file.read().splitlines()
+
+    # Open the CSV file in append mode
+    with open(csv_file_path, 'a', newline='') as csvfile:
         # Create a CSV writer object
         csvwriter = csv.writer(csvfile)
-
-        # Write the header
-        csvwriter.writerow(['IP Address', 'Today\'s Date', 'Expiry Date'])
 
         # Write the data rows
         for ip in ip_addresses:
             csvwriter.writerow([ip, today.strftime('%Y-%m-%d'), expiry_date.strftime('%Y-%m-%d')])
 
-# Read IP addresses from a text file
-with open('cleaned_ips.txt', 'r') as file:
-    ip_addresses = file.read().splitlines()
+# Specify the input text file path and the CSV file path
+input_file_path = 'tinesip0.txt'
+csv_file_path = 'index/index.csv'
 
-# Write the data to a CSV file
-write_to_csv('index/index.csv', ip_addresses)
+# Call the function with the file paths
+append_to_csv(input_file_path, csv_file_path)
