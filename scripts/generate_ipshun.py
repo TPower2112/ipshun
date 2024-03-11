@@ -28,8 +28,8 @@ def filter_ips(csv_file_path, output_file_path):
             file.write(ip + '\n')
 
 # Specify the CSV file path and the output file path
-csv_file_path = 'input.csv'
-output_file_path = 'valid_ips.txt'
+csv_file_path = 'index/index.csv'
+output_file_path = 'ipshun.txt'
 
 # Call the function with the file paths
 filter_ips(csv_file_path, output_file_path)
