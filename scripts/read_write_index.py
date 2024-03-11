@@ -20,7 +20,7 @@ def write_to_csv(file_path, ip_addresses):
             csvwriter.writerow([ip, today.strftime('%Y-%m-%d'), expiry_date.strftime('%Y-%m-%d')])
 
 # Read IP addresses from a text file
-with open('tinesip5.txt', 'r') as file:
+with open('cleaned_ips.txt', 'r') as file:
     ip_addresses = file.read().splitlines()
 
 # Write the data to a CSV file
