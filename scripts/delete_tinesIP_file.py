@@ -1,7 +1,7 @@
 import os
 
 # Specify the path to the file you want to delete
-file_path = 'path/to/your/file'
+file_path = 'tinesip5.txt'
 
 # Check if the file exists
 if os.path.exists(file_path):
