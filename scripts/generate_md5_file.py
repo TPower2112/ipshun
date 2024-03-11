@@ -35,15 +35,26 @@
 #      # Return the hash value
 #      return md5_hash
 # result = export_md5(filename)
+
 import hashlib
 
-f = open('ipshun.txt','rb')
-m = hashlib.md5()
-while True:
-    ## Don't read the entire file at once...
-    data = f.read(10240)
-    if len(data) == 0:
-        break
-    m.update(data)
-md5_hash = m.hexdigest()
-print(md5_hash)
+def generate_md5_checksum(file_path):
+    """Generate an MD5 checksum for the given file and save it to a .md5 file."""
+    hash_md5 = hashlib.md5()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            hash_md5.update(chunk)
+    return hash_md5.hexdigest()
+
+# Specify the path to the FMC Customer Security Intelligence Feed
+file_path = 'ipshun.txt'
+
+# Generate MD5 checksum
+md5_checksum = generate_md5_checksum(file_path)
+
+# Save the MD5 checksum to a .md5 file
+md5_file_path = file_path + '.md5'
+with open(md5_file_path, 'w') as f:
+    f.write(md5_checksum)
+
+print(f'MD5 checksum saved to {md5_file_path}')
