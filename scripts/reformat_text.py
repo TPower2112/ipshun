@@ -13,7 +13,7 @@ def clean_ip_addresses(input_file_path, output_file_path):
             file.write(ip + '\n')
 
 # Specify the input and output file paths
-input_file_path = 'tinesip5.txt'
+input_file_path = 'tinesip.txt'
 output_file_path = 'cleaned_ips.txt'
 
 # Call the function with the file paths
