@@ -21,7 +21,7 @@ def append_to_csv(input_file_path, csv_file_path):
             csvwriter.writerow([ip, today.strftime('%Y-%m-%d'), expiry_date.strftime('%Y-%m-%d')])
 
 # Specify the input text file path and the CSV file path
-input_file_path = 'cleaned_ips.txt'
+input_file_path = 'valid_ips.txt'
 csv_file_path = 'index/index.csv'
 
 # Call the function with the file paths

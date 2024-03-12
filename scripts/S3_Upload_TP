@@ -1,7 +1,7 @@
 import requests
 
 # The invoke URL of the API Gateway
-invoke_url = 'https://bj8thhpbtl.execute-api.us-east-2.amazonaws.com/Dev/'
+invoke_url = 'https://.execute-api.us-east-2.amazonaws.com/Dev/'
 
 # The path parameters required by the API Gateway
 bucket_name = 'ip-shun'

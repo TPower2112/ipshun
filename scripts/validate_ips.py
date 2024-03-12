@@ -15,6 +15,6 @@ def verify_and_write_ipv4(file_path, output_file_path):
                 continue  # Skip the line if it's not a valid IPv4 address
 
 # Usage
-input_file_path = 'path/to/your/inputfile.txt'
+input_file_path = 'cleaned_ips.txt'
 output_file_path = 'valid_ips.txt'
 verify_and_write_ipv4(input_file_path, output_file_path)
