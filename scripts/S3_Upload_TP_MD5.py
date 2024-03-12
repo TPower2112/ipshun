@@ -5,7 +5,7 @@ invoke_url = 'https://.execute-api.us-east-2.amazonaws.com/Dev/'
 
 # The path parameters required by the API Gateway
 bucket_name = 'ip-shun'
-object_key = 'ipshun.txt'
+object_key = 'ipshun.txt.md5'
 
 # The full URL to call the API Gateway
 full_url = f"{invoke_url}/{bucket_name}/{object_key}"
