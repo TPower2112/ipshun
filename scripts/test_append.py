@@ -1,7 +1,7 @@
 import csv
 from datetime import datetime
 
-def append_ip_with_date(file_path, ip_address):
+def main(input):
     # Get the current date in YYYY-MM-DD format
     entry_date = datetime.now().strftime('%Y-%m-%d')
 
@@ -11,5 +11,6 @@ def append_ip_with_date(file_path, ip_address):
 
         # Write the IP address and entry date to the CSV
         writer.writerow([ip_address, entry_date])
+    return {"result": 'The ip address submitted was: '+ ip_address}
 # Example usage:
-append_ip_with_date('file_path', 'ip_address')
+main(input)
