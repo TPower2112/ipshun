@@ -2,6 +2,8 @@ import csv
 from datetime import datetime
 
 def main(input):
+	ip_address = input["ip_address"]
+	file_path = input["file_path"]
     # Get the current date in YYYY-MM-DD format
     entry_date = datetime.now().strftime('%Y-%m-%d')
 
@@ -11,6 +13,4 @@ def main(input):
 
         # Write the IP address and entry date to the CSV
         writer.writerow([ip_address, entry_date])
-    return {"result": 'The ip address submitted was: '+ ip_address}
-# Example usage:
-main(input)
+	return {"result": 'The ip address submitted was: ' + ip_address '
