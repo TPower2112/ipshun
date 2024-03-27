@@ -13,4 +13,4 @@ def main(input):
 
         # Write the IP address and entry date to the CSV
         writer.writerow([ip_address, entry_date])
-    return {"result": 'The ip address submitted was: ' + ip_address
+    return {"result": 'The ip address submitted was: ' + ip_address}
