@@ -2,8 +2,8 @@ import csv
 from datetime import datetime
 
 def main(input):
-	ip_address = input["ip_address"]
-	file_path = input["file_path"]
+    ip_address = input["ip_address"]
+    file_path = input["file_path"]
     # Get the current date in YYYY-MM-DD format
     entry_date = datetime.now().strftime('%Y-%m-%d')
 
